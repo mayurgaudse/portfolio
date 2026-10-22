@@ -1,11 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <p>I am a web devloper</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Name – Java Full Stack Developer</title>
+<style>
+:root{
+  --bg:#f8f9fc; --surface:#ffffff; --text:#1b1f2a; --muted:#5d6577;
+  --accent:#e76f00; --accent-2:#2f6fed; --border:#e2e5ee; --header-bg:rgba(255,255,255,.85);
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f121a; --surface:#171b26; --text:#eceff6; --muted:#9aa3b8;
+    --accent:#ff9433; --accent-2:#6b9bff; --border:#262c3b; --header-bg:rgba(15,18,26,.85);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f121a; --surface:#171b26; --text:#eceff6; --muted:#9aa3b8;
+  --accent:#ff9433; --accent-2:#6b9bff; --border:#262c3b; --header-bg:rgba(15,18,26,.85);
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--header-bg);backdrop-filter:blur(10px);z-index:10}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--header-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.nav{max-width:1100px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-weight:800;font-size:1.25rem;color:var(--text);text-decoration:none;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0}
+.nav-links a{display:block;padding:8px 14px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem;transition:color .2s,background .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--surface)}
+.nav-links a.active{color:var(--accent)}
+.actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:1.1rem;display:grid;place-items:center}
+.icon-btn:hover{border-color:var(--accent)}
+.btn{display:inline-block;padding:11px 22px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{box-shadow:0 8px 20px rgba(231,111,0,.3)}
+.btn-ghost{border:1px solid var(--border);color:var(--text);background:var(--surface)}
+.menu-toggle{display:none}
+
+/* Hero */
+.hero{max-width:1100px;margin:0 auto;padding:90px 20px 80px;display:grid;gap:22px}
+.badge{justify-self:start;padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+.badge b{color:var(--accent-2)}
+.hero h1{margin:0;font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.1;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.role{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(1.05rem,2.5vw,1.4rem);color:var(--accent-2);min-height:1.6em}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent-2);margin-left:3px;vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p{max-width:600px;color:var(--muted);margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.stack span{padding:5px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--border);font-size:.82rem;color:var(--muted)}
+
+/* Placeholder sections so nav links work */
+section.block{max-width:1100px;margin:0 auto;padding:60px 20px;border-top:1px solid var(--border)}
+section.block h2{margin:0 0 8px}
+section.block p{color:var(--muted);margin:0}
+
+/* Mobile */
+@media (max-width:760px){
+  .menu-toggle{display:grid}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--surface);border-bottom:1px solid var(--border);padding:10px 20px 16px;gap:2px;display:none}
+  .nav-links.open{display:flex}
+  .hire{display:none}
+}
+</style>
 </head>
 <body>
-    
+
+<header class="site-header" id="header">
+  <nav class="nav" aria-label="Main">
+    <a href="#home" class="logo">&lt;<span>YourName</span>/&gt;</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="actions">
+      <a href="#contact" class="btn btn-primary hire">Hire Me</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+      <button class="icon-btn menu-toggle" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <span class="badge"><b>●</b> Open to work</span>
+    <h1>Hi, I’m <em>Your Name</em>,<br>a Java Full Stack Developer.</h1>
+    <div class="role"><span id="typed"></span><span class="cursor"></span></div>
+    <p>I build scalable backend services with Java and Spring Boot, and clean, responsive front ends that people enjoy using.</p>
+    <div class="cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Contact Me</a>
+    </div>
+    <div class="stack">
+      <span>Java</span><span>Spring Boot</span><span>Hibernate</span><span>REST APIs</span>
+      <span>MySQL</span><span>React</span><span>Docker</span>
+    </div>
+  </section>
+
+  <section class="block" id="about"><h2>About</h2><p>Add a short intro about yourself here.</p></section>
+  <section class="block" id="skills"><h2>Skills</h2><p>List your technical skills here.</p></section>
+  <section class="block" id="projects"><h2>Projects</h2><p>Showcase your best work here.</p></section>
+  <section class="block" id="contact"><h2>Contact</h2><p>Add your email, LinkedIn and GitHub links here.</p></section>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement, header=document.getElementById('header');
+  var themeBtn=document.getElementById('themeBtn'), menuBtn=document.getElementById('menuBtn'), links=document.getElementById('navLinks');
+
+  /* Theme toggle (remembered per viewer) */
+  function isDark(){
+    var t=root.getAttribute('data-theme');
+    return t ? t==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function paint(){ themeBtn.textContent=isDark()?'☀️':'🌙'; }
+  try{ var saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved); }catch(e){}
+  paint();
+  themeBtn.addEventListener('click',function(){
+    var next=isDark()?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('theme',next); }catch(e){}
+    paint();
+  });
+
+  /* Mobile menu */
+  menuBtn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',open);
+    menuBtn.textContent=open?'✕':'☰';
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){ links.classList.remove('open'); menuBtn.textContent='☰'; menuBtn.setAttribute('aria-expanded','false'); }
+  });
+
+  /* Shadow on scroll + active link highlight */
+  var anchors=[].slice.call(links.querySelectorAll('a'));
+  var sections=anchors.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    header.classList.toggle('scrolled',window.scrollY>10);
+    var y=window.scrollY+120, idx=0;
+    sections.forEach(function(s,i){ if(s && s.offsetTop<=y) idx=i; });
+    anchors.forEach(function(a,i){ a.classList.toggle('active',i===idx); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* Typing effect */
+  var roles=['Spring Boot Microservices','REST API Design','React & Modern UIs','MySQL & Database Design'];
+  var el=document.getElementById('typed'), r=0, c=0, del=false;
+  function tick(){
+    var word=roles[r];
+    el.textContent=word.slice(0,c);
+    if(!del && c===word.length){ del=true; return setTimeout(tick,1400); }
+    if(del && c===0){ del=false; r=(r+1)%roles.length; }
+    c+=del?-1:1;
+    setTimeout(tick,del?40:80);
+  }
+  tick();
+})();
+</script>
 </body>
+</html>
